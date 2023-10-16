@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.select-plan {
+  flex: 1;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.plan-box {
+  padding: 15px;
+}
+
+.membership-plan {
+  display: flex;
+  justify-content: space-between;
+}
+.membership-plan .plan-box {
+  width: 30%;
+  border-radius: 6px;
+  border: 1px solid hsl(231, 11%, 63%);
+}
+.membership-plan .plan-name {
+  color: hsl(213, 96%, 18%);
+}
+.membership-plan .plan-price {
+  color: hsl(231, 11%, 63%);
+  margin-top: 10px;
+}
+.membership-plan .plan-discount {
+  color: hsl(213, 96%, 18%);
+  font-weight: 200;
+  margin-top: 2px;
+}
+.membership-plan .plan-icon {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 575px) {
+  .membership-plan {
+    flex-direction: column;
+  }
+  .membership-plan .plan-box {
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+  }
+  .membership-plan .plan-box .plan-price {
+    margin: 0;
+  }
+  .membership-plan .plan-box .plan-icon {
+    margin: 0 10px 0 0;
+  }
+}
+.subscription-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 6px;
+  height: 50px;
+}
+.subscription-type .sub-input {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+}
+.subscription-type .billing-btn {
+  width: 45px;
+  height: 22.5px;
+  border-radius: 200px;
+  border: none;
+  background-color: #0c203f;
+  cursor: pointer;
+  margin: 0 20px;
+}
+.subscription-type .switch {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 3px;
+  transition: transform 400ms ease-in-out;
+}
+.subscription-type .switch--right {
+  transform: translateX(23px);
+}
+
+.clicked {
+  border: 1px solid hsl(243, 100%, 62%) !important;
+}/*# sourceMappingURL=SelectPlanStyle.css.map */

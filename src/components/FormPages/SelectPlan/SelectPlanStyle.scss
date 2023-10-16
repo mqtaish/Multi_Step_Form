@@ -1,0 +1,101 @@
+@import './../../MainUI/vars';
+
+.select-plan{
+    flex: 1;
+    font-family: $font;
+}
+
+.plan-box{
+    padding: 15px;
+}
+
+.membership-plan{   
+    display: flex;
+    justify-content: space-between;
+
+    .plan-box{
+        width: 30%;
+        border-radius: 6px;
+        border: 1px solid $cool-gray
+    }
+    .plan-name{
+        color: $marine-blue;
+    }
+    .plan-price{
+        color: $cool-gray;
+        margin-top: 10px;
+    }
+    .plan-discount{
+        color: $marine-blue;
+        font-weight: 200;
+        margin-top: 2px;
+    }
+    .plan-icon{
+        margin-bottom: 40px;
+    }
+   
+}
+
+@media (max-width: 575px){
+    .membership-plan{
+       flex-direction: column;
+
+       .plan-box{
+        display: flex;
+        width: 100%;
+        
+        margin: 5px 0;
+        .plan-price{
+            margin: 0;
+        }
+        .plan-icon{
+            margin: 0 10px 0 0;
+        }
+        }
+    }
+
+    
+}
+
+.subscription-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: $alabaster;
+    border-radius: 6px;
+    height: 50px;
+    .sub-input{
+        width: 40px;
+        height: 40px;
+        margin: 0 20px;
+    }
+
+    
+    .billing-btn {
+        width: 45px;
+        height: 22.5px;
+        border-radius: 200px;
+        border: none;
+        background-color: #0c203f;
+        cursor: pointer;
+        margin: 0 20px;
+    }
+
+    .switch {
+        width: 16px;
+        height: 16px;
+        background-color: white;
+        border-radius: 50%;
+        margin: 0 3px;
+        transition: transform 400ms ease-in-out;
+      }
+      
+      .switch--right {
+        transform: translateX(calc(45px - 16px - 6px));
+      }
+}
+
+.clicked{
+   border: 1px solid $purplish-blue  !important;
+}

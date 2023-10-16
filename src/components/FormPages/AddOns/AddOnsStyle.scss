@@ -1,0 +1,40 @@
+@import '../../MainUI/vars';
+.addons-cards{
+    flex: 1;
+    .addon-card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #eee;
+        margin: 20px 0;
+        padding: 15px;
+        border-radius: 6px;
+        .texts-card{
+            flex: 1;
+
+            & h4{
+                color: $marine-blue;
+                margin-bottom: 4px;
+            }
+
+            & h5{
+                color: $cool-gray;
+            }
+
+        }
+
+        & input{
+            margin-right: 25px;
+            width: 20px;
+        }
+
+        .monthly-charge{
+            color: $purplish-blue;
+        }
+    }
+
+}
+
+.is-checked-border{
+    border: 2px solid $purplish-blue !important;
+}

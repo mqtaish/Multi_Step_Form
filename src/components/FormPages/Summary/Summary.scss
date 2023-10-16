@@ -1,0 +1,51 @@
+@import '../../MainUI/vars';
+
+.summary{
+    flex: 1;
+    font-family: $font;
+
+    .service-cost{
+        color: $purplish-blue;
+        font-weight: bold;
+    }
+}
+
+.actual-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actual-price{
+    background-color: #f8f8fe;
+    padding: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-top: 10px;
+
+    .actual-charge-price{
+        color: $marine-blue;
+    }
+}
+
+@import './../../MainUI/vars';
+.total-fees{
+    background-color: #f8f8fe;
+    padding: 20px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+    .d-flex{
+        display: flex;
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+
+
+}
+
+.total-charges{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.addons-cards {
+  flex: 1;
+}
+.addons-cards .addon-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 6px;
+}
+.addons-cards .addon-card .texts-card {
+  flex: 1;
+}
+.addons-cards .addon-card .texts-card h4 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 4px;
+}
+.addons-cards .addon-card .texts-card h5 {
+  color: hsl(231, 11%, 63%);
+}
+.addons-cards .addon-card input {
+  margin-right: 25px;
+  width: 20px;
+}
+.addons-cards .addon-card .monthly-charge {
+  color: hsl(243, 100%, 62%);
+}
+
+.is-checked-border {
+  border: 2px solid hsl(243, 100%, 62%) !important;
+}/*# sourceMappingURL=AddOnsStyle.css.map */

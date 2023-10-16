@@ -1,0 +1,56 @@
+@import './../../MainUI/vars';
+.main-header{
+    text-align: left;
+    margin-bottom: 30px;
+    .main-title{
+        color: $marine-blue;
+        margin-bottom: 10px;
+    }
+    p{
+        color: $cool-gray;
+    }
+
+
+}
+
+.main-label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-form{
+    text-align: left;
+    font-family: $font;
+   input,
+   label{
+    display: block;
+    margin: 10px 0;
+   }
+
+   
+     label{
+    color: $marine-blue;
+    }
+
+   input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    height: 40px;
+    padding: 10px;
+   }
+
+   .user-input{
+    margin: 25px 0;    
+   }
+
+}
+
+.red-border{
+    border: 1px solid red !important;
+}
+
+.error-message{
+    color: red;
+}
