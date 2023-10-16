@@ -18,9 +18,7 @@ export const AdminDashboard = ({ usersData, setIsLogged, setPageNumber, setIsSwi
                     {usersData.map((user, index) => {
                         const { switchState, name, email, phone, planName, planPrice, planPeriod, addOns } = user;
                         const total = planPrice + (addOns ? addOns.reduce((acc, addOn) => acc + (switchState ? addOn.price * 10 : addOn.price), 0) : 0);
-                        console.log("plan price", planPrice);
-                        console.log(planPeriod);
-                        console.log(total);
+
                         return (
                             <tr key={index}>
                                 <td className="table-data">{name}</td>

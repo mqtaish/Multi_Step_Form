@@ -30,7 +30,7 @@ export const AddonCard = ({
                 <h4>{title}</h4>
                 <h5>{para}</h5>
             </div>
-            <span className="monthly-charge">+${(isSwitched) ? price * 10 : price}</span>
+            <span className="monthly-charge">+${(isSwitched) ? (price * 10) + `/yr` : price + `/mo`} </span>
         </label >
     );
 };
