@@ -39,7 +39,7 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
         email: "",
         phone: "",
     });
-    const [plan, setPlan] = useState({ planName: "Arcade", planPeriod: "/mo", switchState: "false", planPrice: 9 });
+    const [plan, setPlan] = useState({ planName: "Arcade", planPeriod: "/mo", switchState: false, planPrice: 9 });
     const [addOns, setAddOns] = useState([]);
 
     const handleFormUserData = (fieldName, value) => setFormData({ ...formData, [fieldName]: value });

@@ -4,6 +4,7 @@ import { TotalCost } from './TotalCost'
 
 export const Summary = ({ addOns, isSwitched, plan }) => {
     const subscriptionPeriod = ((plan.switchState) ? "/yr" : "/mo");
+
     let TotolCostAddons = plan.planPrice;
 
     const TotalCostList = addOns.map((item, index) => {
