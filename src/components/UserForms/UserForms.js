@@ -13,7 +13,6 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
     const [usersData, setUsersData] = useState([]);
 
     const storageKey = 'usersData';
-
     useEffect(() => {
         const storedData = localStorage.getItem(storageKey);
         if (storedData) {
@@ -22,23 +21,13 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
     }, []);
 
     const handleSetUsersData = () => {
-
-        const userData = {
-            ...formData,
-            ...plan,
-            addOns: [...addOns],
-        };
-
+        const userData = { ...formData, ...plan, addOns: [...addOns] };
         const updatedData = [...usersData, userData];
         setUsersData(updatedData);
         localStorage.setItem(storageKey, JSON.stringify(updatedData));
     }
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-    });
+    const [formData, setFormData] = useState({ name: "", email: "", phone: "", });
     const [plan, setPlan] = useState({ planName: "Arcade", planPeriod: "/mo", switchState: false, planPrice: 9 });
     const [addOns, setAddOns] = useState([]);
 
@@ -47,10 +36,8 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
         setPlan(planObj);
     };
 
-    // Start Addons  Component
-
     const handleFormSelectAddOns = ({ title, price }, addOnsValue) => {
-        console.log(price);
+
         if (addOnsValue) {
             setAddOns([...addOns, { title, price }]);
         } else {
@@ -65,16 +52,11 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
 
     const handleCheckboxChange = (id, isChecked) => setCheckboxState({ ...checkboxState, [id]: isChecked });
 
-    const onCheckboxChange = (id, isChecked) => handleCheckboxChange(id, isChecked);
-
-    // End Addons  Component
-
-    // Start Toggle Switched
     const [isSwitched, setIsSwitched] = useState(false);
+
     const handleSwitchedToggle = (isClicked) => {
         setIsSwitched(isClicked);
     };
-    // End Toggle Switched
 
     const formTitles = [
         {
@@ -121,10 +103,8 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
                     <AddOns
                         isSwitched={isSwitched}
                         setIsSwitched={setIsSwitched}
-                        handleSwitchedToggle={handleSwitchedToggle}
                         checkboxState={checkboxState}
-                        onCheckboxChange={onCheckboxChange}
-                        addOns={addOns}
+                        handleCheckboxChange={handleCheckboxChange}
                         handleFormSelectAddOns={handleFormSelectAddOns}
                     />
                 );
@@ -153,17 +133,19 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
     const validateForm = () => {
         const validationErrors = {};
 
-        if (formData.name && !formData.name.trim()) {
+        const isEmpty = (value) => !value || !value.trim();
+
+        if (isEmpty(formData.name)) {
             validationErrors.name = "Name is required";
         }
 
-        if (formData.email && !formData.email.trim()) {
+        if (isEmpty(formData.email)) {
             validationErrors.email = "Email is required";
         } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
             validationErrors.email = "Email is not valid";
         }
 
-        if (formData.phone && !formData.phone.trim()) {
+        if (isEmpty(formData.phone)) {
             validationErrors.phone = "Phone is required";
         }
 
@@ -173,15 +155,27 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
     };
 
 
+    const resetAllStates = (isReset) => {
+        if (isReset) {
+            setFormData({})
+            setPlan({ planName: "Arcade", planPeriod: "/mo", switchState: false, planPrice: 9 })
+            setAdmin({})
+            setAddOns([])
+            setCheckboxState({})
+            setIsSwitched(false)
+            setErrors({})
+        }
+    }
+
     return (
         <div className={(!isLogged) ? "right-side-forms" : ""} >
             <form className="user-form">
+
                 {isLogged && <AdminDashboard
                     usersData={usersData}
                     setIsLogged={setIsLogged}
                     setPageNumber={setPageNumber}
-                    setIsSwitched={setIsSwitched}
-                    setAdmin={setAdmin}
+                    resetAllStates={resetAllStates}
                 ></AdminDashboard>}
 
                 {!isLogged && pageNumber !== 5 && (
@@ -202,8 +196,6 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
                             pageNumber={pageNumber}
                             classNameBtn={(pageNumber === 1) ? "back-step-btn hidden" : "back-step-btn"}
                             nameBtn={"Go Back"}
-                            handleSetUsersData={handleSetUsersData}
-                            validateForm={validateForm}
                         ></Button>
                     )}
 
@@ -214,11 +206,7 @@ export const UserForms = ({ pageNumber, setPageNumber, isLogged, setIsLogged, se
                         nameBtn={pageNumber !== 4 ? "Next Step" : "Confirm"}
                         handleSetUsersData={handleSetUsersData}
                         validateForm={validateForm}
-                        setFormData={setFormData}
-                        setPlan={setPlan}
-                        setAdmin={setAdmin}
-                        setAddOns={setAddOns}
-                        setCheckboxState={setCheckboxState}
+                        resetAllStates={resetAllStates}
                     ></Button>}
 
                 </div>

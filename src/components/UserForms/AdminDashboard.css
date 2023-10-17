@@ -8,7 +8,6 @@
 .user-table {
   border-collapse: collapse;
   width: 100%;
-  width: 1000px;
   background-color: #f2f2f2;
 }
 .user-table .table-header {
@@ -22,8 +21,8 @@
   text-align: left;
   padding: 8px;
 }
-.user-table .table-data .table-data:nth-child(even) {
-  background-color: #f2f2f2;
+.user-table .table-data:nth-child(even) {
+  background-color: #eee;
 }
 .user-table .addon-list {
   list-style: none;

@@ -5,11 +5,10 @@ export const AddonCard = ({
     title,
     para,
     price,
-    addOns,
     handleFormSelectAddOns,
     isChecked,
-    onCheckboxChange,
-    isSwitched
+    handleCheckboxChange,
+    isSwitched,
 }) => {
     const classIsCheck = (isChecked[id]) ? "is-checked-border" : "";
 
@@ -24,7 +23,7 @@ export const AddonCard = ({
             <input type="checkbox"
                 value={isChecked[id]}
                 checked={isChecked[id]}
-                onChange={(e) => onCheckboxChange(id, e.target.checked)}
+                onChange={(e) => handleCheckboxChange(id, e.target.checked)}
             ></input>
             <div className="texts-card">
                 <h4>{title}</h4>

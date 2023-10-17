@@ -7,24 +7,14 @@ export const Button = ({
     setPageNumber,
     pageNumber,
     handleSetUsersData,
-    setFormData,
-    setPlan,
-    setAdmin,
-    setAddOns,
-    setCheckboxState,
+    resetAllStates,
+
 }) => {
 
-    const resetAllState = () => {
-        setFormData({})
-        setPlan({ planName: "Arcade", planPrice: 9 })
-        setAdmin({})
-        setCheckboxState({})
-        setAddOns([])
-    }
 
     const handleConfirmBtn = () => {
         handleSetUsersData();
-        resetAllState();
+        resetAllStates(true);
     }
 
     return (
@@ -32,7 +22,7 @@ export const Button = ({
             onClick={(e) => {
                 e.preventDefault();
 
-                if (!validateForm()) {
+                if (nameBtn !== "Go Back" && !validateForm()) {
                     return false;
                 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import './AdminDashboard.css'
-export const AdminDashboard = ({ usersData, setIsLogged, setPageNumber, setIsSwitched, setAdmin }) => {
+export const AdminDashboard = ({ usersData, setIsLogged, setPageNumber, resetAllStates }) => {
     return (
         <div>
             <table className="user-table">
@@ -16,7 +16,7 @@ export const AdminDashboard = ({ usersData, setIsLogged, setPageNumber, setIsSwi
                 </thead>
                 <tbody>
                     {usersData.map((user, index) => {
-                        const { switchState, name, email, phone, planName, planPrice, planPeriod, addOns } = user;
+                        const { switchState, name, email, phone, planName, planPrice, addOns } = user;
                         const total = planPrice + (addOns ? addOns.reduce((acc, addOn) => acc + (switchState ? addOn.price * 10 : addOn.price), 0) : 0);
 
                         return (
@@ -53,8 +53,7 @@ export const AdminDashboard = ({ usersData, setIsLogged, setPageNumber, setIsSwi
                     e.preventDefault();
                     setIsLogged(false);
                     setPageNumber(1);
-                    setAdmin({})
-                    setIsSwitched(false);
+                    resetAllStates(true)
                 }}
             >Logout</button>
         </div>

@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../MainUI/_vars.scss","ThanksMessageStyle.css","ThanksMessageStyle.scss"],"names":[],"mappings":"AACU,mHAAA;AAwBV;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACvBJ;;ACJA;EACI,kBAAA;EACA,YAAA;ADOJ;;ACJA;EACI,YAAA;ADOJ","file":"ThanksMessageStyle.css"}
+{"version":3,"sources":["../../MainUI/_vars.scss","ThanksMessageStyle.css","ThanksMessageStyle.scss"],"names":[],"mappings":"AACU,mHAAA;AAuBV;EACI,sBAAA;EACA,SAAA;EACA,UAAA;ACtBJ;;ACJA;EACI,kBAAA;EACA,YAAA;ADOJ;;ACJA;EACI,YAAA;ADOJ","file":"ThanksMessageStyle.css"}

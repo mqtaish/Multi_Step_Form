@@ -11,11 +11,9 @@ export const MultiFormStepApp = () => {
     const [isLogged, setIsLogged] = useState(false);
     const [admin, setAdmin] = useState({ user: "", password: "" });
 
-    const handleIsLoggedAdmin = (isLogged) => setIsLogged(isLogged);
-
     return (
         <div className='container'>
-            <div className='wrapper'>
+            <div className={(!isLogged) ? "wrapper" : ""} >
                 {(!isLogged) && <ProgressBar
                     pageNumber={pageNumber}
                     setPageNumber={setPageNumber}

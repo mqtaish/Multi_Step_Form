@@ -3,7 +3,6 @@
 .user-table {
     border-collapse: collapse;
     width: 100%;
-    width: 1000px;
     background-color: #f2f2f2;
 
     .table-header {
@@ -18,8 +17,8 @@
         text-align: left;
         padding: 8px;
 
-        .table-data:nth-child(even) {
-            background-color: #f2f2f2;
+        &:nth-child(even) {
+            background-color: #eee;
         }
     }
     
@@ -43,6 +42,7 @@
     cursor: pointer;
     text-align: center;
     margin: 10px auto;
+    
 }
 
 

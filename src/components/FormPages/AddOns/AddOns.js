@@ -26,10 +26,9 @@ export const options = [
 ];
 
 export const AddOns = ({
-    addOns,
     handleFormSelectAddOns,
     checkboxState,
-    onCheckboxChange,
+    handleCheckboxChange,
     isSwitched,
 }) => {
     const optionList = options.map((option, index) => {
@@ -38,13 +37,12 @@ export const AddOns = ({
                 key={index}
                 isSwitched={isSwitched}
                 id={option.id}
-                addOns={addOns}
                 handleFormSelectAddOns={handleFormSelectAddOns}
                 title={option.name}
                 para={option.description}
                 price={option.pricePerMonth}
                 isChecked={checkboxState}
-                onCheckboxChange={onCheckboxChange}
+                handleCheckboxChange={handleCheckboxChange}
             ></AddonCard>
         );
     });

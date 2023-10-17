@@ -4,8 +4,8 @@ export const PlanBox = ({ planName, planPrice, id, handleFormSelectPlan, isSelec
     const boxClassName = isSelected ? 'plan-box clicked' : 'plan-box' + (selectedBox == null && id === 1 ? ' clicked' : '');
     return (
         <div className={boxClassName} onClick={() => {
-            const period = (isSwitched) ? "/yr" : "/mo";
-            handleFormSelectPlan({ planName, planPrice, period, switchState: isSwitched })
+            const planPeriod = (isSwitched) ? "/yr" : "/mo";
+            handleFormSelectPlan({ planName, planPrice, planPeriod, switchState: isSwitched })
             handleSelectBox(id);
         }}>
             <img className='plan-icon' src={planImage} alt={planName}></img>
