@@ -25,6 +25,7 @@
 @media (max-width: 767px) {
   .wrapper {
     padding: 0;
+    flex-flow: column;
     background-color: hsl(217, 100%, 97%);
   }
   .container {
@@ -39,7 +40,7 @@
   background-image: url(/public/images/bg-sidebar-desktop.svg);
 }
 .left-side-column .steps {
-  margin-top: 40px;
+  margin-top: 20px;
   color: hsl(0, 0%, 100%);
 }
 .left-side-column .steps__number {
@@ -138,8 +139,7 @@
     border-radius: 8px;
     padding: 30px 20px;
     width: 80%;
-    margin-top: -6px;
-    margin-bottom: 100px;
+    margin-top: -20px;
   }
   .right-side-forms .main-header,
   .right-side-forms .user-form .user-input {
